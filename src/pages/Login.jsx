@@ -25,7 +25,7 @@ const Login = () => {
   async function handleSubbmit(e){
     e.preventDefault();
     try{
-      const response = await axios.post(`http://localhost:${PORT}/auth/login`,formDetails);
+      const response = await axios.post(`https://todo-api-delta-blue.vercel.app/auth/login`,formDetails);
       localStorage.setItem("token",response.data.token)
       toast.success('Logged in');
       navigate('/todos')
